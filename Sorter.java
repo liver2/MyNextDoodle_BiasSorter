@@ -22,28 +22,13 @@ public class Sorter {
             terms.add(new Term(s,0));
         }
 
-        // BRUTE FORCE SORT
-        // for (int i = 0; i < terms.size(); i++) {
-        //     for (int j = i+1; j < terms.size(); j++) {
-        //         int userInput;
-
-        //         do {
-        //             System.out.println("Please compare " + terms.get(i).getTermString() + " and " + terms.get(j).getTermString() + ". Type 1 for the first option, 2 for the second option.");
-        //             userInput = scan.nextInt();
-        //         } while (!(userInput == 1 || userInput == 2));
-                
-        //         if (userInput == 1) {
-        //             terms.get(i).increment();
-        //         } else if (userInput == 2) {
-        //             terms.get(j).increment();
-        //         } else {
-        //             System.out.println("error");
-        //         }
-        //     }
-        // }
+        Merger merger = new Merger();
+        merger.mergeSort(terms);
 
         for (Term t : terms) {
             System.out.println(t);
         }
+
+        scan.close();
     }
 }

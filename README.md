@@ -12,3 +12,12 @@ April 18:
 - Began writing the "Merger" class which uses merge-sort to sort the user-inputted terms
 - Researched MergeSort
 - Researched List class & implemented the subList() method
+
+April 24:
+- Researched efficient sorting algorithms (QuickSort?)
+- Researched time complexity (discovered what O notation is)
+- Resource used: https://theory.cs.princeton.edu/complexity/book.pdf
+- Decided on Merge Sort (again, as it's most fundamental and has a low avg. runtime)
+- Researched and attempted a quick derivation of Merge Sort in Java using recursion
+- Finished first draft of derivation
+- Debugging a Concurrent Modification Exception (current)
