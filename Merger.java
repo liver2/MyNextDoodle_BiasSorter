@@ -7,24 +7,34 @@ public class Merger {
         }
 
         List<Term> leftTermList = termList.subList(0,termList.size()/2);
+
+        System.out.println(leftTermList);
+
         List<Term> rightTermList = termList.subList(termList.size()/2,termList.size());
+
+        System.out.println(rightTermList);
 
         leftTermList = mergeSort(leftTermList);
         rightTermList = mergeSort(rightTermList);
 
-        return mergeLists(leftTermList,rightTermList);
+        return mergeLists(leftTermList,rightTermList,termList.size());
     }
 
-    public List<Term> mergeLists(List<Term> termListA, List<Term> termListB) {
+    public List<Term> mergeLists(List<Term> termListA, List<Term> termListB, int originalTermListSize) {
         List<Term> returnList = new ArrayList<Term>();
 
-        while(termListA.size() != 0 && termListB.size() != 0) { // CONCURRENT MODIFICATION EXCEPTION THROWN HERE
+        int aSize = originalTermListSize/2 + 1;
+        int bSize = originalTermListSize - originalTermListSize/2 + 1;
+
+        while(aSize != 0 && bSize != 0) {
             int userInput = compare(termListA.get(0).getTermString(),termListB.get(0).getTermString());
 
             if (userInput == 1) {
                 returnList.add(termListB.remove(0));
+                bSize--;
             } else {
                 returnList.add(termListA.remove(0));
+                aSize--;
             }
         }
 

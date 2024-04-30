@@ -16,6 +16,6 @@ public class Term {
     }
 
     public String toString() {
-        return ("String: " + termString + "\nValue: " + value + "\n");
+        return ("Value: " + termString + "\n");
     }
 }
